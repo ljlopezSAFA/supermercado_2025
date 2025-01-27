@@ -13,6 +13,7 @@ public class Producto {
     private LocalDate fechaCaducidad;
     private TipoProducto tipoProducto;
     private Almacen almacen;
+    private Double precio;
 
 
 
@@ -66,6 +67,13 @@ public class Producto {
         this.almacen = almacen;
     }
 
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
 
     //CONSTRUCTORES
 
@@ -73,13 +81,18 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Integer identificador, String codigo, String descripcion, LocalDate fechaCaducidad, TipoProducto tipoProducto, Almacen almacen) {
+    public Producto(Integer identificador, String codigo,
+                    String descripcion,
+                    LocalDate fechaCaducidad,
+                    TipoProducto tipoProducto,
+                    Almacen almacen, Double precio) {
         this.identificador = identificador;
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fechaCaducidad = fechaCaducidad;
         this.tipoProducto = tipoProducto;
         this.almacen = almacen;
+        this.precio = precio;
     }
 
 
@@ -90,12 +103,18 @@ public class Producto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Producto producto = (Producto) o;
-        return Objects.equals(identificador, producto.identificador) && Objects.equals(codigo, producto.codigo) && Objects.equals(descripcion, producto.descripcion) && Objects.equals(fechaCaducidad, producto.fechaCaducidad) && tipoProducto == producto.tipoProducto && Objects.equals(almacen, producto.almacen);
+        return Objects.equals(identificador, producto.identificador) &&
+                Objects.equals(codigo, producto.codigo)
+                && Objects.equals(descripcion, producto.descripcion)
+                && Objects.equals(fechaCaducidad, producto.fechaCaducidad)
+                && tipoProducto == producto.tipoProducto
+                && Objects.equals(almacen, producto.almacen)
+                && Objects.equals(precio, producto.precio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identificador, codigo, descripcion, fechaCaducidad, tipoProducto, almacen);
+        return Objects.hash(identificador, codigo, descripcion, fechaCaducidad, tipoProducto, almacen, precio);
     }
 
 
@@ -109,6 +128,7 @@ public class Producto {
                 ", fechaCaducidad=" + fechaCaducidad +
                 ", tipoProducto=" + tipoProducto +
                 ", almacen=" + almacen +
+                ", precio=" + precio +
                 '}';
     }
 }
