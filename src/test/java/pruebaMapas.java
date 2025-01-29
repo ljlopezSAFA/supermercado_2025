@@ -1,5 +1,6 @@
 import com.sl.modelos.Almacen;
 import com.sl.modelos.Producto;
+import com.sl.utilidades.UtilidadesProducto;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -142,6 +143,11 @@ public class pruebaMapas {
 //        Map<Almacen, List<Producto>>;
 
 
+        System.out.println("----------------------------PRUEBA EJERCICIOS V2-------------------------");
+
+
+        List<Producto> solucion = UtilidadesProducto.getPorAlmacen(productos, almacen1);
+        System.out.println(solucion);
 
 
 
@@ -155,26 +161,21 @@ public class pruebaMapas {
 
 
 
-
-
-
-
-
-        for (Producto p : productos) {
-
-            if (mediaPrecioAlmacen.containsKey(p.getAlmacen())) {
-                mediaPrecioAlmacen.put(p.getAlmacen(), mediaPrecioAlmacen.get(p.getAlmacen()) + p.getPrecio());
-            } else {
-                mediaPrecioAlmacen.put(p.getAlmacen(), p.getPrecio());
-            }
-
-            if (numProductosAlmacen.containsKey(p.getAlmacen())) {
-                numProductosAlmacen.put(p.getAlmacen(), numProductosAlmacen.get(p.getAlmacen()) + 1);
-            } else {
-                numProductosAlmacen.put(p.getAlmacen(), 1);
-            }
-
-        }
+//        for (Producto p : productos) {
+//
+//            if (mediaPrecioAlmacen.containsKey(p.getAlmacen())) {
+//                mediaPrecioAlmacen.put(p.getAlmacen(), mediaPrecioAlmacen.get(p.getAlmacen()) + p.getPrecio());
+//            } else {
+//                mediaPrecioAlmacen.put(p.getAlmacen(), p.getPrecio());
+//            }
+//
+//            if (numProductosAlmacen.containsKey(p.getAlmacen())) {
+//                numProductosAlmacen.put(p.getAlmacen(), numProductosAlmacen.get(p.getAlmacen()) + 1);
+//            } else {
+//                numProductosAlmacen.put(p.getAlmacen(), 1);
+//            }
+//
+//        }
 
 
 
@@ -182,6 +183,9 @@ public class pruebaMapas {
 //            mediaPrecioAlmacen.put(al, mediaPrecioAlmacen.get(al) / productosPorAlmacen.get(al));
 //
 //        }
+
+
+
 
 
 
