@@ -58,10 +58,6 @@ public class Almacen {
 
     @Override
     public String toString() {
-        return "Almacen{" +
-                "identificador=" + identificador +
-                ", nombre='" + nombre + '\'' +
-                ", capacidad=" + capacidad +
-                '}';
+        return this.nombre;
     }
 }
